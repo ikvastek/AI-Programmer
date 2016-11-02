@@ -21,11 +21,8 @@ namespace AIProgrammer.Managers
 
             if (!resume)
             {
-                if (setupFunc != null)
-                {
-                    // Perform any additional setup for this fitness.
-                    setupFunc();
-                }
+                // Perform any additional setup for this fitness.
+                setupFunc?.Invoke();
 
                 // Delete any existing dat file.
                 File.Delete(Directory.GetCurrentDirectory() + "\\my-genetic-algorithm.dat");
